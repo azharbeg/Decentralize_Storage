@@ -5,7 +5,6 @@ import com.example.decentralizedstorage.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 @Service
 public class AuthService {
 
@@ -17,6 +16,11 @@ public class AuthService {
                        PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+    }
+
+    // //
+    public String encodePassword(String rawPassword) {
+        return passwordEncoder.encode(rawPassword);
     }
 
     public User registerUser(String username, String email, String password) {

@@ -14,12 +14,14 @@ public class FileMetaData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+   // @Column(nullable = false)
     private String fileName;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private long fileSize;
 
-    @Column(nullable = false, unique = true)
+   // @Column(nullable = false, unique = true)
     private String fileHash;  // Unique file identifier (CID)
+
+
 }

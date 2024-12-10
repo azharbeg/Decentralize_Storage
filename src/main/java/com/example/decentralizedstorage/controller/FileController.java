@@ -18,11 +18,16 @@ import java.io.IOException;
 @RequestMapping("/api/files")
 public class FileController {
 
+
+
     private final FileService fileService;
 
     public FileController(FileService fileService) {
         this.fileService = fileService;
+        System.out.println("FileController bean initialized");
+
     }
+
 
     /*
         Handles file uploads via an HTTP POST request.

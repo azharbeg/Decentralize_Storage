@@ -26,14 +26,20 @@ import java.nio.file.Paths;
 @Service
 public class FileService {
 
-    @Value("${file.upload.dir}") // Injects the file upload directory path from the application properties
+
+
+    //@Value("${file.upload.dir}") // Injects the file upload directory path from the application properties
     private String uploadDir;
 
     private final FileMetadataRepository fileMetadataRepository;
 
+
+
     // Injects the FileMetadataRepository dependency into the service via the constructor
     public FileService(FileMetadataRepository fileMetadataRepository) {
         this.fileMetadataRepository = fileMetadataRepository;
+        System.out.println("FileService bean initialized");
+
     }
 
     public String uploadFile(MultipartFile file) throws IOException {
